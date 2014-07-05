@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html manifest="login.appcache">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Upcoming Events</title>
+</head>
+<body>
+
+<div data-role="page" id="main" class="jqm-demos jqm-home">
+    <div class="login-title" data-role="header" style="">
+    Tell us who you are
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content" id="content" style="display: block; width: 70%; margin: 20px auto;">
+    	<label for="1">Matric. No. :</label>
+    	<input type="text" id="1" name="1">
+    	<label for="2">NTU Email :</label>
+    	<input type="text" id="2" name="2">
+    </div><!-- /content -->
+    <div data-role="footer" class="footer ui-grid-a" style="background: #2d6d93;">
+    	<a class="ui-block-a footer-button" style="" id="reg">Register</a>
+    	<a class="ui-block-b footer-button" style="" id="next">Next</a>
+	</div><!-- /footer -->
+</div>
+
+<script>
+$("#next").click(function () {
+	$.ajax({
+		
+	});
+});
+</script>
+</body>
+</html>
