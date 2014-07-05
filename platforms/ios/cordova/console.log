@@ -139,3 +139,37 @@ You could find it at the following address https://developer.apple.com/icloud/do
 
 2014-07-05 23:58:31.121 NTU IIC[78718:70b] Resetting plugins due to page load.
 2014-07-05 23:58:31.666 NTU IIC[78718:70b] Finished load of: file:///Users/Wenjie/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EC79E5AF-4F85-4169-BDF6-23837A210AA0/NTU%20IIC.app/www/index.html
+objc[80451]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-07-06 00:07:53.766 NTU IIC[80451:70b] Cannot find executable for CFBundle 0xa5bc4d0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-07-06 00:07:53.775 NTU IIC[80451:70b] Cannot find executable for CFBundle 0xa4a77a0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-07-06 00:07:53.816 NTU IIC[80451:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-06 00:07:53.827 NTU IIC[80451:70b] Unlimited access to network resources
+2014-07-06 00:07:53.831 NTU IIC[80451:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-07-06 00:07:53.865 NTU IIC[80451:70b] [CDVTimer][statusbar] 10.976970ms
+2014-07-06 00:07:53.866 NTU IIC[80451:70b] [CDVTimer][TotalPluginStartup] 11.609972ms
+2014-07-06 00:07:54.012 NTU IIC[80451:70b] Resetting plugins due to page load.
+2014-07-06 00:07:54.384 NTU IIC[80451:70b] Finished load of: file:///Users/Wenjie/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EC79E5AF-4F85-4169-BDF6-23837A210AA0/NTU%20IIC.app/www/index.html
+Terminating in response to SpringBoard's termination.
+objc[81203]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-07-06 00:10:56.166 NTU IIC[81203:70b] Cannot find executable for CFBundle 0xa56fef0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-07-06 00:10:56.173 NTU IIC[81203:70b] Cannot find executable for CFBundle 0xa5a99f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-07-06 00:10:56.240 NTU IIC[81203:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-06 00:10:56.251 NTU IIC[81203:70b] Unlimited access to network resources
+2014-07-06 00:10:56.255 NTU IIC[81203:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-07-06 00:10:56.298 NTU IIC[81203:70b] [CDVTimer][statusbar] 15.899956ms
+2014-07-06 00:10:56.299 NTU IIC[81203:70b] [CDVTimer][TotalPluginStartup] 16.547978ms
+2014-07-06 00:10:56.427 NTU IIC[81203:70b] Resetting plugins due to page load.
+2014-07-06 00:10:56.820 NTU IIC[81203:70b] Finished load of: file:///Users/Wenjie/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EC79E5AF-4F85-4169-BDF6-23837A210AA0/NTU%20IIC.app/www/index.html
+2014-07-06 00:11:09.835 NTU IIC[81203:70b] Received memory warning.

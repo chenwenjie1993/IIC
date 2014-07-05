@@ -39,6 +39,7 @@
 /Users/Wenjie/IIC/platforms/android/assets/www/jquery.mobile-1.4.3 \
 /Users/Wenjie/IIC/platforms/android/assets/www/js \
 /Users/Wenjie/IIC/platforms/android/assets/www/login.html \
+/Users/Wenjie/IIC/platforms/android/assets/www/plugins \
 /Users/Wenjie/IIC/platforms/android/assets/www/res \
 /Users/Wenjie/IIC/platforms/android/assets/www/swiper \
 /Users/Wenjie/IIC/platforms/android/assets/www/text.html \
@@ -674,6 +675,9 @@
 /Users/Wenjie/IIC/platforms/android/assets/www/jquery.mobile-1.4.3/images/icons-svg/video-white.svg \
 /Users/Wenjie/IIC/platforms/android/assets/www/js/index.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/js/jquery-1.11.1.min.js \
+/Users/Wenjie/IIC/platforms/android/assets/www/plugins/org.apache.cordova.statusbar \
+/Users/Wenjie/IIC/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www \
+/Users/Wenjie/IIC/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www/statusbar.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/swiper/idangerous.swiper.css \
 /Users/Wenjie/IIC/platforms/android/assets/www/swiper/idangerous.swiper.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/swiper/idangerous.swiper.min.js \

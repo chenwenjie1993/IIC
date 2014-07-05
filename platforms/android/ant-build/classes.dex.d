@@ -1,4 +1,7 @@
 /Users/Wenjie/IIC/platforms/android/ant-build/classes.dex : \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$2.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/ntu_iic/BuildConfig.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/ntu_iic/IICApp.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/ntu_iic/R$attr.class \
