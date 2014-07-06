@@ -72,25 +72,13 @@ body {
     <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
     <link rel="stylesheet" type="text/css" href="swiper/idangerous.swiper.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <script>
-    	window.onload = function() {
-			var mySwiper = new Swiper('.swiper-container',{
-			pagination: '.pagination',
-			paginationClickable: true,
-			slidesPerView: 1,
-			loop: true,
-			autoplay: 3000
-			});
-		}
-    </script>
+
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script>
 	$( document ).on( "mobileinit", function() {
 	    // Make your jQuery Mobile framework configuration changes here!
-/*
 		$.support.cors = true;
 	    $.mobile.allowCrossDomainPages = true;
-*/
 /*
 	    alert("variable set!");
 	    if (localStorage.getItem('userID') == undefined) {
@@ -101,104 +89,144 @@ body {
 	});
     </script>
 	<script type="text/javascript" src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+
 	<script type="text/javascript" src="swiper/idangerous.swiper.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="b"><h2>IIC</h2><div data-role="ui-panel-inner"><ul class="" data-role="listview"><li style=""><a href="" style="">About</a></li><li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed"><div></div><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">Icons<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true"><ul data-role="listview"><li><a href="" data-ajax="false">Icons</a></li><li><a href="" data-ajax="false">Grunticon loader</a></li></ul></div></li><li style=""><a href="" style="">About</a></li>	<li style=""><a href="" style="">About</a></li>	</ul></div></div>';
+		
+		$(document).one('pagebeforecreate', function () {
+		    $.mobile.pageContainer.prepend(panel);
+		    $("#mypanel").panel().enhanceWithin();
+		});
+		
+	</script>
 	<script type="text/javascript" src="cordova.js"></script>
-
     <meta name="msapplication-tap-highlight" content="no" />
-    <title>Upcoming Events</title>
+    <title>IIC</title>
 </head>
 <body>
+<div id="pagecontainer">
 
-<div data-role="page" id="main" class="" data-ajax="false">
+<div data-role="page" id="page0" class="" data-ajax="false">
     <div data-role="header" style="border: none;">
 	    <div class="header">
 	    	<h1 role="heading">Upcoming Events</h1>
-			<a role="button" data-role="button" id="panelBtn" herf="" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon" style="padding-top: 10px;"></a>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content" style="padding: 0; ">
+    
+		<div class="swiper-container" id="0">
+			
+		</div>
+
+    </div><!-- /content -->
+
+    
+</div>
+
+
+
+<div data-role="page" id="page1" class="" data-ajax="false">
+    <div data-role="header" style="border: none;">
+	    <div class="header">
+	    	<h1 role="heading">Singapore Financial Conference</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content" style="padding: 0; ">
+    <div class="" id="1">
+
+	</div>
+    </div><!-- /content -->
+</div>
+
+
+
+<div data-role="page" id="page2" class="" data-ajax="false">
+    <div data-role="header" style="border: none;">
+	    <div class="header">
+	    	<h1 role="heading">Leadership Retreat</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
 	    </div>
     </div><!-- /header -->
     <div data-role="main" class="ui-content" id="content" style="padding: 0; ">
-    
-	<div class="swiper-container" id="swiper">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide red-slide">
-			<div class="title">Slide 1</div>
-			</div>
-			<div class="swiper-slide blue-slide">
-			<div class="title">Slide 2</div>
-			</div>
-			<div class="swiper-slide orange-slide">
-			<div class="title">Slide 3</div>
-			</div>
-		</div>
-		<div class="pagination"></div>
+    <div class="" id="2">
+
 	</div>
-
-
+	
     </div><!-- /content -->
-<!--
-    <div data-role="footer" class="footer ui-grid-a" style="background: #2d6d93;" data-ajax="false">
-    	<a class="ui-block-a footer-button" style="">Previous</a>
-    	<a class="ui-block-b footer-button" style="">Next</a>
-	</div><!-- /footer -->
--->
-    
-<div data-role="panel" class="" data-position="left" data-display="push" id="left-panel" data-theme="b">
-	<h2>IIC</h2>
-	<div data-role="ui-panel-inner">
-		<ul class="" data-role="listview">
-			<li style=""><a href="" style="">About</a></li>
-			<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
-				<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
-					<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
-						Icons<span class="ui-collapsible-heading-status"> click to expand contents</span>
-					</a>
-				</h3>
-				<div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
-					<ul data-role="listview">
-						<li><a href="" data-ajax="false">Icons</a></li>
-						<li><a href="" data-ajax="false">Grunticon loader</a></li>
-					</ul>
-				</div>
-			</li>
-			<li style=""><a href="" style="">About</a></li>	
-			<li style=""><a href="" style="">About</a></li>	
-			<li style=""><a href="" style="">About</a></li>	
-			<li style=""><a href="" style="">About</a></li>	
-			<li style=""><a href="" style="">About</a></li>	
-			<li style=""><a href="" style="">About</a></li>	
-		</ul>
-	</div>
-</div><!-- /panel -->
 </div>
+
+
+
+
+
+
+</div>
+
+
+
 
 <script>
 
 app.initialize();
 
-/*
-$("#content").bind("touchstart", function(e) {
-	$("#main").toggleClass("hidden");
-});
-*/
+var swiperArr = [];
+		
 
-/*
-$(document).on( "swipeleft swiperight", "#main", function( e ) {
+$(document).on('ready', function () {
+	$.ajax({
+		url: "0.html",
+		success: function (response) {
+			$('#0').html(response);
+			swiperArr[0] = new Swiper('.swiper-container',{
+				pagination: '.pagination',
+				paginationClickable: true,
+				slidesPerView: 1,
+				loop: true,
+				autoplay: 3000
+			});
+		}
+	});
+});
+
+
+$(document).on( "swipeleft", function() {
+	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id'));
+	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+	var idNS = id.substr(4, id.length-4);
+	var idN = parseInt(idNS);
+	var nextN = idN + 1;
+	var nextPage = "#page" + nextN;
+	alert(nextPage);
+	$.mobile.changePage(nextPage, {transition: "slide"});
+	$.ajax({
+		url: nextN+".html",
+		success: function (response) {
+			
+			$('#' + nextN).html(response);
+			alert(nextN+".html");
+		}
+	});
+});
+
+
+$(document).on( "swiperight", function() {
+	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id')); 
+	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+	var next = "#page" + (parseInt(id.substr(4, id.length-4))-1);
+	alert(next);
+	$.mobile.changePage(next, {transition: "slide", reverse: true});
+});
+
+$(".panelBtn").click(function() {
     if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-        if ( e.type === "swiperight" ) {
-            $( "#left-panel" ).panel( "open" );
-        }
+        $( "#mypanel" ).panel( "open" );
     }
 });
-*/
 
-
-
-$(panelBtn).click(function() {
-    if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-        $( "#left-panel" ).panel( "open" );
-    }
-});
 
 </script>
 </body>
