@@ -29,6 +29,9 @@
 /Users/Wenjie/IIC/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
 /Users/Wenjie/IIC/platforms/android/assets/_where-is-www.txt \
 /Users/Wenjie/IIC/platforms/android/assets/www \
+/Users/Wenjie/IIC/platforms/android/assets/www/0.html \
+/Users/Wenjie/IIC/platforms/android/assets/www/1.html \
+/Users/Wenjie/IIC/platforms/android/assets/www/2.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/cordova.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/cordova_plugins.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/css \
@@ -39,10 +42,10 @@
 /Users/Wenjie/IIC/platforms/android/assets/www/jquery.mobile-1.4.3 \
 /Users/Wenjie/IIC/platforms/android/assets/www/js \
 /Users/Wenjie/IIC/platforms/android/assets/www/login.html \
+/Users/Wenjie/IIC/platforms/android/assets/www/page1.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/plugins \
 /Users/Wenjie/IIC/platforms/android/assets/www/res \
 /Users/Wenjie/IIC/platforms/android/assets/www/swiper \
-/Users/Wenjie/IIC/platforms/android/assets/www/text.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/css/images \
 /Users/Wenjie/IIC/platforms/android/assets/www/css/index.css \
 /Users/Wenjie/IIC/platforms/android/assets/www/css/login.css \

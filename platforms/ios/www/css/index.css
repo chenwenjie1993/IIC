@@ -101,19 +101,19 @@ h1 {
 
 .header {
     padding-top: 7px !important;
-    padding-bottom: 6px !important;
+    padding-bottom: 7px !important;
     background: #2d6d93;
     color: white;
 }
 
-#panelBtn {
+.panelBtn {
 	float: left;
 
 	border-width: 0 !important;
-	padding: 7px;
+	padding: 8px !important;
 	background: #1c4258 !important;
-	top: 0;
-	left: 0;
+	top: 0 !important;
+	left: 0 !important;
 }
 
 #main * {
@@ -140,11 +140,6 @@ h1 {
 	margin: 0 !important;
 }
 
-#content{
-	padding-bottom:30px;   /* Height of the footer element */
-}
-
-
 
 .footer {
 	width:100%;
@@ -170,4 +165,10 @@ h1 {
 
 .hidden {
 	display: none !important;
+}
+
+
+.pic {
+	height: 100%;
+	width: 100%;
 }
