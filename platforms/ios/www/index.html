@@ -79,7 +79,7 @@
 	<script type="text/javascript" src="swiper/idangerous.swiper.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script>
-		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="b"><h2>IIC</h2><div data-role="ui-panel-inner"><ul class="" data-role="listview"><li style=""><a href="" style="">About</a></li><li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed"><div></div><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">Icons<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true"><ul data-role="listview"><li><a href="" data-ajax="false">Icons</a></li><li><a href="" data-ajax="false">Grunticon loader</a></li></ul></div></li><li style=""><a href="" style="">About</a></li>	<li style=""><a href="" style="">About</a></li>	</ul></div></div>';
+		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="b"><h2>IIC</h2><div data-role="ui-panel-inner"><ul class="" data-role="listview"><li style=""><a href="" style="">About</a></li><li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-collapsed"><div></div><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">Icons<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true"><ul data-role="listview"><li><a href="" data-ajax="false">Icons</a></li><li><a href="" data-ajax="false">Grunticon loader</a></li></ul></div></li><li style=""><a href="" style="">About</a></li>	<li style=""><a href="" style="">About</a></li>	</ul></div></div>';
 		
 		$(document).one('pagebeforecreate', function () {
 		    $.mobile.pageContainer.prepend(panel);
@@ -106,7 +106,18 @@
 		<div class="swiper-container" id="0">
 			
 		</div>
-		<div id="event-list" style="width: 100%; height: 500px;">
+		<div id="event-list" style="width: 100%;">
+			<ul class="" data-role="listview" style="padding: 12px;">
+				<li style="">
+					<a href="#page1" style="">About</a>
+				</li>
+				<li style="">
+					<a href="#page2" style="">About</a>
+				</li>
+				<li style="">
+					<a href="" style="">About</a>
+				</li>	
+			</ul>
 		</div>
     </div><!-- /content -->
 
@@ -123,9 +134,12 @@
 	    </div>
     </div><!-- /header -->
     <div data-role="main" class="ui-content" style="padding: 0; ">
-    <div id="1">
 
-	</div>
+		<div class="detail">
+			<div id="1">
+	
+			</div>
+		</div>
     </div><!-- /content -->
 </div>
 
@@ -139,10 +153,12 @@
 	    </div>
     </div><!-- /header -->
     <div data-role="main" class="ui-content" id="content" style="padding: 0; ">
-    <div id="2">
 
-	</div>
-	
+		<div class="detail">
+		    <div id="2">
+		
+			</div>
+		</div>
     </div><!-- /content -->
 </div>
 
@@ -180,7 +196,7 @@ $(document).on('ready', function () {
 });
 
 
-$(document).on( "swipeleft", function() {
+$(".detail").on( "swipeleft", function() {
 /* 	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id')); */
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
 	var idNS = id.substr(4, id.length-4);
@@ -200,7 +216,7 @@ $(document).on( "swipeleft", function() {
 });
 
 
-$(document).on( "swiperight", function() {
+$(".detail").on( "swiperight", function() {
 /* 	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id'));  */
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
 	var next = "#page" + (parseInt(id.substr(4, id.length-4))-1);

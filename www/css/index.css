@@ -24,6 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+/*
     background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -35,6 +36,8 @@ body {
         color-stop(0, #A7A7A7),
         color-stop(0.51, #E4E4E4)
     );
+*/
+
     background-attachment:fixed;
     font-family:'HelveticaNeue-UltraLight', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -59,7 +62,8 @@ body {
 */
 h1 {
     font-size:16px;
-    padding-bottom: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align:center;
     margin: 0;
     display: block;
@@ -102,7 +106,7 @@ h1 {
 .header {
     padding-top: 7px !important;
     padding-bottom: 7px !important;
-    background: #2d6d93;
+    background: #1c4258;
     color: white;
 }
 
@@ -124,16 +128,16 @@ h1 {
     user-select: none;
 }
 
-.ui-listview > li {
+.ui-panel .ui-listview {
 	margin-left: -12px;
 	margin-right: -12px;
 }
 
-.ui-listview .ui-collapsible {
-	margin-left: -12px;
-	margin-right: -12px;
+.ui-panel .ui-listview .ui-collapsible {
+
 	padding: 0;
-	margin-top: 0;
+	border-style: none;
+	border-width: 0 !important;
 }
 
 .ui-collapsible-heading {
@@ -172,3 +176,14 @@ h1 {
 	height: 100%;
 	width: 100%;
 }
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+/*
+#event-list a {
+	background: #2d6d93 !important;
+}
+*/
