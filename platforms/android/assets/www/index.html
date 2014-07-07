@@ -109,10 +109,10 @@
 		<div id="event-list" style="width: 100%;">
 			<ul class="" data-role="listview" style="padding: 12px;">
 				<li style="">
-					<a href="#page1" style="">About</a>
+					<a href="#page1" style="" data-transition="slide">About</a>
 				</li>
 				<li style="">
-					<a href="#page2" style="">About</a>
+					<a href="#page2" style="" data-transition="slide">About</a>
 				</li>
 				<li style="">
 					<a href="" style="">About</a>
@@ -126,7 +126,7 @@
 
 
 
-<div data-role="page" id="page1" class="" data-ajax="true">
+<div data-role="page" id="page1" class="pages" data-ajax="true">
     <div data-role="header" style="border: none;">
 	    <div class="header">
 	    	<h1 role="heading">Singapore Financial Conference</h1>
@@ -145,7 +145,7 @@
 
 
 
-<div data-role="page" id="page2" class="" data-ajax="true">
+<div data-role="page" id="page2" class="pages" data-ajax="true">
     <div data-role="header" style="border: none;">
 	    <div class="header">
 	    	<h1 role="heading">Leadership Retreat</h1>
@@ -178,10 +178,23 @@ app.initialize();
 
 var swiperArr = [];
 		
+$(document).on("pagecontainerchange", function () {
+	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+	var idNS = id.substr(4, id.length-4);
+	var load = idNS + ".html";
+	if (id != "page0") {
+		$.ajax({
+			url: load,
+			success: function (response) {
+				$('#'+idNS).html(response);
+			}
+		});
+	}
+});
 
 $(document).on('ready', function () {
 	$.ajax({
-		url: "0.html",
+		url: "home.html",
 		success: function (response) {
 			$('#0').html(response);
 			swiperArr[0] = new Swiper('.swiper-container',{

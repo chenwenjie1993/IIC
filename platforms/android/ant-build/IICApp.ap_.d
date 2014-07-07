@@ -29,13 +29,13 @@
 /Users/Wenjie/IIC/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
 /Users/Wenjie/IIC/platforms/android/assets/_where-is-www.txt \
 /Users/Wenjie/IIC/platforms/android/assets/www \
-/Users/Wenjie/IIC/platforms/android/assets/www/0.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/1.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/2.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/cordova.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/cordova_plugins.js \
 /Users/Wenjie/IIC/platforms/android/assets/www/css \
 /Users/Wenjie/IIC/platforms/android/assets/www/font \
+/Users/Wenjie/IIC/platforms/android/assets/www/home.html \
 /Users/Wenjie/IIC/platforms/android/assets/www/images \
 /Users/Wenjie/IIC/platforms/android/assets/www/img \
 /Users/Wenjie/IIC/platforms/android/assets/www/index.html \

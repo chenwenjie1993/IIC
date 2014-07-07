@@ -182,12 +182,14 @@ $(document).on("pagecontainerchange", function () {
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
 	var idNS = id.substr(4, id.length-4);
 	var load = idNS + ".html";
-	$.ajax({
-		url: load,
-		success: function (response) {
-			$('#'+idNS).html(response);
-		}
-	});
+	if (id != "page0") {
+		$.ajax({
+			url: load,
+			success: function (response) {
+				$('#'+idNS).html(response);
+			}
+		});
+	}
 });
 
 $(document).on('ready', function () {
