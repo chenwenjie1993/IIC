@@ -182,6 +182,17 @@ h2 {
 	margin-bottom: 8px;
 }
 
+h3 {
+	background: #5f9abc;
+	margin: 0;
+	padding: 10px;
+}
+
+.des {
+	padding: 10px;
+	font-family: Helvetica;
+}
+
 /*
 #event-list a {
 	background: #2d6d93 !important;
