@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B07A510F-BA92-41E6-8895-725B83A4DE03</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NTU IIC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4D0E254B-C0C1-4FC7-8F5D-9318E699A1C3</key>
+		<string>https://github.com/chenwenjie1993/IIC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/NTU IIC.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4D0E254B-C0C1-4FC7-8F5D-9318E699A1C3</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chenwenjie1993/IIC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4D0E254B-C0C1-4FC7-8F5D-9318E699A1C3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4D0E254B-C0C1-4FC7-8F5D-9318E699A1C3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IIC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

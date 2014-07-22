@@ -17,11 +17,35 @@
                             "count": 1
                         },
                         {
-                            "xml": "<preference name=\"StatusBarBackgroundColor\" value=\"#1c4258\" />",
+                            "xml": "<preference name=\"StatusBarBackgroundColor\" value=\"#2d6d93\" />",
                             "count": 1
                         },
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "true",
                             "count": 1
                         }
                     ]
@@ -31,6 +55,12 @@
     },
     "installed_plugins": {
         "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "org.ntu-iic"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "org.ntu-iic"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "org.ntu-iic"
         }
     },

@@ -8,6 +8,12 @@
     <feature name="StatusBar">
         <param name="android-package" onload="true" value="org.apache.cordova.statusbar.StatusBar" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
     <name>NTU IIC</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -17,5 +23,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreen" value="screen" />
 </widget>

@@ -1,85 +1,92 @@
 <!DOCTYPE html>
-<!-- <html manifest="index.appcache"> -->
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 
-  <style>
-.swiper-container {
-  width: 100%;
-  height: 180px;
-  color: #fff;
-  text-align: center;
-}
-.red-slide {
-  background: #ca4040;
-}
-.blue-slide {
-  background: #4390ee;
-}
-.orange-slide {
-  background: #ff8604;
-}
-.green-slide {
-  background: #49a430;
-}
-.pink-slide {
-  background: #973e76;
-}
-.pagination {
-  position: absolute;
-  z-index: 20;
-  left: 10px;
-  bottom: 10px;
-}
-.swiper-pagination-switch {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  background: #222;
-  margin-right: 5px;
-  opacity: 0.8;
-  border: 1px solid #fff;
-  cursor: pointer;
-}
-.swiper-visible-switch {
-  background: #aaa;
-}
-.swiper-active-switch {
-  background: #fff;
-}
-  </style>
+	<style>
+	.swiper-container {
+	  width: 100%;
+	  height: 300px;
+	  color: #fff;
+	  text-align: center;
+	}
+	.red-slide {
+	  background: #ca4040;  
+/* remember to reset background	   */
+	}
 
+	</style>
 
-    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="css/themes/g.min.css" />
+	<link rel="stylesheet" href="jquery.mobile-1.4.3/jquery.mobile.structure-1.4.3.css" />
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" type="text/css" href="swiper/idangerous.swiper.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-
+    
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="application/javascript" src="js/fastclick.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+    <script>
+    	function refreshPage() {
+	    	$.mobile.changePage('#page0', {
+		    	allowSamePageTransition: true,
+		    	transition: 'none'
+			});
+			setTimeout(function() {
+				navigator.notification.alert(
+				    "Welcome, "+localStorage.getItem("name"),  // message
+				    null,         // callback
+				    'Welcome back',            // title
+				    "OK"                  // buttonName
+				);		
+			}, 0);
+    	}
+    </script>
     <script>
 	$( document ).on( "mobileinit", function() {
-	    // Make your jQuery Mobile framework configuration changes here!
 		$.support.cors = true;
 	    $.mobile.allowCrossDomainPages = true;
-/*
-	    alert("variable set!");
-	    if (localStorage.getItem('userID') == undefined) {
+	    
+	    if (localStorage.getItem('name') == undefined) {
 	        window.location.replace("login.html");
-	        alert("yes!")
 	    }
+	    else {
+/*
+			navigator.notification.alert(
+			    "Welcome, "+localStorage.getItem("name"),  // message
+			    null,         // callback
+			    'Welcome back',            // title
+			    "OK"                  // buttonName
+			);	 
 */
+	    }
 	});
     </script>
 	<script type="text/javascript" src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
-
+	
 	<script type="text/javascript" src="swiper/idangerous.swiper.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+<!-- 	<script type="text/javascript" src="js/index.js"></script> -->
+	
+	<script type="application/javascript">
+		window.addEventListener('load', function() {
+			new FastClick(document.body);
+		}, false);
+	</script>
 	<script>
-		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="b"><h2>IIC</h2><div data-role="ui-panel-inner"><ul class="" data-role="listview"><li style=""><a href="" style="">About</a></li><li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-collapsed"><div></div><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">Icons<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true"><ul data-role="listview"><li><a href="" data-ajax="false">Icons</a></li><li><a href="" data-ajax="false">Grunticon loader</a></li></ul></div></li><li style=""><a href="" style="">About</a></li>	<li style=""><a href="" style="">About</a></li>	</ul></div></div>';
+		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="a">\
+		<h2>IIC</h2>\
+		<a class="ui-btn ui-btn-right ui-icon-delete ui-btn-icon-notext closeBtn"></a>\
+		<div data-role="ui-panel-inner"><ul class="" data-role="listview">\
+		<li><a href="" style="" data-transition="slide reverse" id="home">Event Sign-Up</a></li>\
+		<li><a href="#quiz-page" style="" data-transition="slide">Monthly Quiz</a></li>\
+		<li><a href="" style="" data-transition="slide" data-ajax="false">Our Events</a></li>\
+		<li><a href="#about-us" style="" data-transition="slide" data-ajax="false">About Us</a></li>\
+		<li><a href="#contact-us" style="" data-transition="slide" data-ajax="true">Contact Us</a></li>\
+		<li><a href="login.html" style="" rel="external">Logout</a></li></ul></div></div>';
 		
 		$(document).one('pagebeforecreate', function () {
 		    $.mobile.pageContainer.prepend(panel);
@@ -87,53 +94,87 @@
 		});
 		
 	</script>
-	<script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        document.addEventListener("resume", onResume, false);
+        document.addEventListener("online", onOnline, false);
+/*         document.addEventListener("offline", onOffline, false); */
+    }
+
+    // Handle the resume event
+    //
+    function onResume() {
+    	refreshPage();
+/*
+    	setTimeout(function() {
+        	alert("resume!");
+        }, 0);
+*/
+    }
+    
+    function onOnline() {
+/*     	alert("online!"); */
+/*     	refreshPage(); */
+/*
+    	setTimeout(function() {
+        	alert("online!");
+        }, 0);
+*/
+/* 		refreshPage(); */
+    }
+    
+    function onOffline() {
+/*
+    	setTimeout(function() {
+        	alert("offline!");
+        }, 0);
+*/
+    }
+
+    </script>
+
     <meta name="msapplication-tap-highlight" content="no" />
     <title>IIC</title>
 </head>
-<body>
-<div id="pagecontainer">
+<body onload="onLoad()">
 
+
+<!-- Event sign up page <page0>-->
 <div data-role="page" id="page0" class="" data-ajax="false">
-    <div data-role="header" style="border: none;">
+    <div data-role="header" style="border: none;" data-position="fixed" data-transition="none">
 	    <div class="header">
-	    	<h1 role="heading">Upcoming Events</h1>
+	    	<h1 role="heading">Event Sign-Up</h1>
 			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
 	    </div>
     </div><!-- /header -->
-    <div data-role="main" class="ui-content" style="padding: 0; ">
-    
-		<div class="swiper-container" id="0">
-			
-		</div>
-		<div id="event-list" style="width: 100%;">
-			<ul class="" data-role="listview" style="padding: 12px;">
-				<li style="">
-					<a href="#page1" style="" data-transition="slide">About</a>
-				</li>
-				<li style="">
-					<a href="#page2" style="" data-transition="slide">About</a>
-				</li>
-				<li style="">
-					<a href="" style="">About</a>
-				</li>	
-			</ul>
-		</div>
-    </div><!-- /content -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; display: block;"  data-position="fixed" id="0" data-iscroll>    
 
-    
+    </div><!-- /content -->   
 </div>
 
 
-
-<div data-role="page" id="page1" class="pages" data-ajax="true">
-    <div data-role="header" style="border: none;">
+<!-- event details page <page 1-8>-->
+<div data-role="page" id="page1" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">Singapore Financial Conference</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">IIC Event</h1>
+			<a data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right event-control" data-role="button" href="" style="">
+				<div class="label nr">Join Now</div>
+			</a>
 	    </div>
     </div><!-- /header -->
-    <div data-role="main" class="ui-content" style="padding: 0; ">
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
 
 		<div class="detail">
 			<div id="1">
@@ -143,16 +184,17 @@
     </div><!-- /content -->
 </div>
 
-
-
-<div data-role="page" id="page2" class="pages" data-ajax="true">
-    <div data-role="header" style="border: none;">
+<div data-role="page" id="page2" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">Leadership Retreat</h1>
+	    	<h1 role="heading">IIC Event</h1>
 			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
 	    </div>
     </div><!-- /header -->
-    <div data-role="main" class="ui-content" id="content" style="padding: 0; ">
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
 
 		<div class="detail">
 		    <div id="2">
@@ -162,49 +204,340 @@
     </div><!-- /content -->
 </div>
 
+<div data-role="page" id="page3" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="3">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="page4" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="4">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="page5" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="5">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="page6" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="6">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="page7" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="7">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="page8" class="pages" data-ajax="false">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">IIC Event</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
+				<div class="label nr">Join Now</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+		    <div id="8">
+		
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
 
 
+<!-- quiz list page -->
+<div data-role="page" id="quiz-page" data-ajax="false">
+	<div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">Monthly Quiz</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+	<div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+		<div class="detail" id="quiz-list" style="">
 
+		</div>
+    </div><!-- /content -->
+</div>
 
+<!-- quiz question page -->
+<div data-role="page" id="quiz-question" data-ajax="true">
+	<div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">Quiz</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+	<div data-role="main" class="ui-content" style="padding: 0; -webkit-overflow-scrolling: touch !important; overflow:auto !important;" id="question-container">
+		<iframe id="qFrame" src="" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div><!-- /content -->
+</div>
 
+<!-- about us -->
+<div data-role="page" id="about-us" data-ajax="false">
+	<div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">About Us</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+	<div data-role="main" class="ui-content scrollingArea" style="padding: 0px; ">
+		<div>
+			<h3>Background</h3>
+			<div class="des">
+	NTU Investment Interactive Club (IIC) is a non-profit club founded in 1999 in response to the government’s call for initiatives to develop a vibrant investing community. Since then, NTU-IIC has grown substantially to become the largest finance society in NTU today.<br>
+			</div>
+			<h3>Vision</h3>
+			<div class="des">
+	Our club vision, <b>“Towards a Knowledgeable Investing Student Population”</b> is the driving force behind all our projects. IIC plans to realize this vision through three objectives:
+			</div>
+	<ul>
+	<li>Promote greater awareness for the need of investment especially among young students and at the same time develop students' interest in financial market.</li>
+	<li>Assist IIC members to develop and further hone their practical investing skills and strategies.</li>
+	<li>Foster close interactions between various educational institutions and the financial community.</li>
+	</ul>
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<!-- contact us -->
+<div data-role="page" id="contact-us" data-ajax="false">
+	<div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">Contact Us</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+	<div data-role="main" class="ui-content scrollingArea" style="padding: 0px; ">
+		<div class="" id="" style="">
+			<div class="des">
+			You can contact us through any of the following platforms:
+			</div>
+			<h3>Our Address:</h3>
+			<div class="des">
+			Nanyang Technological University Investment Interactive Club C/O Student Affairs Office, NTU Admin Annex Level 6<br>
+			Nanyang Avenue Singapore 639798
+			</div>
+			<h3>Our Clubroom:</h3>
+			<div class="des">
+			Nanyang Business School South Spine, Block S4<br>
+			Level B1, Sector C, Room 43<br>
+			Nearest Carpark: Carpark Q
+			</div>
+			<h3>For Enquiries:</h3>
+			<div class="des">
+			ntu-iic@e.ntu.edu.sg
+			</div>
+			<h3>For Feedback:</h3>
+			<div class="des">
+			ntu-iic.feedback@ntu.edu.sg<br>
+			As well as through our Facebook page.
+			</div>
+		</div>
+    </div><!-- /content -->
 </div>
 
 
 
 
+
 <script>
+$(document).on({
+	ajaxStart: function() { 
+		$.mobile.loading('show');
+	},
+	ajaxStop: function() {
+		$.mobile.loading('hide');
+	}    
+});
 
-app.initialize();
 
-var swiperArr = [];
-		
+
 $(document).on("pagecontainerchange", function () {
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
-	var idNS = id.substr(4, id.length-4);
-	var load = idNS + ".html";
-	if (id != "page0") {
+
+	if (id == "quiz-page") {
 		$.ajax({
-			url: load,
+			url: "quiz-list.html",
 			success: function (response) {
-				$('#'+idNS).html(response);
+				$('#quiz-list').html(response);
+				$(".quiz").listview();
+				$(".quiz a").on('click', function () {
+					$.mobile.changePage("#quiz-question", {transition: "slide"});
+					var idNS = $(this).attr('id').substr(4, id.length-4);
+					$("#qFrame").attr('src', $("#q"+idNS).val()); 
+				});
+				
 			}
 		});
+	}
+	else if (id == "quiz-question") {
+        
+	}
+	else if (id == "page0") {
+		$.ajax({
+			url: "events-sign-up.html",
+			success: function (response) {
+				$('#0').html(response);
+				var swiper = new Swiper('.swiper-container',{
+					pagination: '.pagination',
+					paginationClickable: true,
+					slidesPerView: 1,
+					loop: true,
+					autoplay: 3000
+				});
+				$("#event-list").listview();
+			}
+		});
+	}
+	else {
+		var idNS = id.substr(4, id.length-4);
+		var load = idNS + ".html";
+		var event = $("#event"+idNS).text();
+		/* alert(event); */
+		if (id != "page0") {
+			$.ajax({
+				url: load,
+				success: function (response) {
+					//load new event page
+					$('#'+idNS).html(response);
+					//send server eventTest request
+					var request = '{"request": "eventTest", \
+									"event": "'+ event +'", \
+									"email": "'+ localStorage.getItem('email')+'", \
+									"date": "123", \
+									"name": "'+ localStorage.getItem('name')+'"} ';
+					$('#'+id).find('h1').text(event);
+/* 					alert(request); */
+
+					$.ajax({
+						url: "http://www.ntu-iic.org/app/event_status.php",
+						data: {event: request},
+						type: "POST",
+						dataType: "json",
+						success: function (response) {
+
+							var obj = $('#'+id).find('.label');
+
+							if (response.status == "r") { //event has been registered
+								obj.text('Cancel');
+								$(obj).removeClass('nr').addClass('r');
+							}
+							else if (response.status == "nr") { //event has not been registered
+
+							}
+						}
+					});
+
+				}
+			});
+		}
 	}
 });
 
 $(document).on('ready', function () {
+	
 	$.ajax({
-		url: "home.html",
+		url: "events-sign-up.html",
 		success: function (response) {
 			$('#0').html(response);
-			swiperArr[0] = new Swiper('.swiper-container',{
+			var swiper = new Swiper('.swiper-container',{
 				pagination: '.pagination',
 				paginationClickable: true,
 				slidesPerView: 1,
 				loop: true,
 				autoplay: 3000
 			});
+			$("#event-list").listview();
+/* 			alert($(window).height()); */
+			$(".scrollingArea").height($(window).height()-47);
+/* 			alert($(".scrollingArea").height()); */
+
 		}
+	});
+	$('#home').on('click', function () {
+		$.mobile.changePage("#page0", {transition: "slide reverse", allowSamePageTransition: true});
 	});
 });
 
@@ -217,15 +550,14 @@ $(".detail").on( "swipeleft", function() {
 	var nextN = idN + 1;
 	var nextPage = "#page" + nextN;
 /* 	alert(nextPage); */
-	$.mobile.changePage(nextPage, {transition: "slide"});
-	
-	$("#"+nextN).load(nextN + ".html",function(responseTxt,statusTxt,xhr){
-      if(statusTxt=="success"){};
-
-      if(statusTxt=="error"){};
-
-    });
-	
+	if ($("#event-count").val()>idN) { 
+		$.mobile.changePage(nextPage, {transition: "slide"});
+		
+		$("#"+nextN).load(nextN + ".html",function(responseTxt,statusTxt,xhr){
+	      if(statusTxt=="success"){};
+	      if(statusTxt=="error"){};
+	    });
+	};
 });
 
 
@@ -237,10 +569,131 @@ $(".detail").on( "swiperight", function() {
 	$.mobile.changePage(next, {transition: "slide", reverse: true});
 });
 
-$(".panelBtn").click(function() {
-    if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-        $( "#mypanel" ).panel( "open" );
-    }
+$(document).on('click', ".panelBtn", function() {
+	$( "#mypanel" ).panel( "open" );
+});
+
+$(document).on('click', ".closeBtn", function() {
+	$( "#mypanel" ).panel( "close" );
+});
+
+/*
+$(".nr").on('click', function () {
+	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+	var idNS = id.substr(4, id.length-4);
+	var event = $("#event"+idNS).text();
+
+});
+*/
+
+$(".label").on('click', function () {
+	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+	var idNS = id.substr(4, id.length-4);
+	var event = $("#event"+idNS).text();
+	var btn = $(this);
+	if (btn.hasClass("r")) {
+		var request = '{"request": "eventCC", \
+						"event": "'+ event +'", \
+						"email": "'+ localStorage.getItem('email') + '"}';
+		$.ajax({
+			url: "http://www.ntu-iic.org/app/event_cancel.php",
+			data: {eventCC: request}, 
+			type: "POST",
+			dataType: "json",
+			success: function (response) {
+				if (response.status == "s") {
+					navigator.notification.alert(
+					    "The registration has been canceled.",  // message
+					    null,         // callback
+					    'Registration Cancel',            // title
+					    "OK"                  // buttonName
+					);
+					btn.text("Join Now");
+					btn.removeClass('r').addClass('nr');
+				}
+				else {
+					alert(response.reason);  //?? Do we have any reasons?
+				}
+			}
+		});
+	}
+	else if (btn.hasClass("nr")) {
+		
+						
+		var slotCount = $("#"+id).find(".slotCount").val();
+/* 		alert(slotCount); */
+		var message = "Please Choose a time slot: \n";
+		for (i=1; i<parseInt(slotCount); i++) {
+			message += "Slot" + i + ": " + $("#"+id).find(".slot" + i).val() + "\n";
+		}
+		message += "Slot" + slotCount + ": " + $("#"+id).find(".slot" + slotCount).val();
+		var slot = "";
+		if (slotCount == "2") {
+			navigator.notification.confirm(
+		        message,  // message
+		        onPrompt,                  // callback to invoke
+		        'Event Registration',            // title
+		        ['Slot1','Slot2']            // buttonLabels
+		    );
+		}
+		else if (slotCount == "1") {
+			navigator.notification.confirm(
+		        message,  // message
+		        onPrompt,                  // callback to invoke
+		        'Event Registration',            // title
+		        ['OK']            // buttonLabels
+		    );
+		}
+		if (slotCount == "3") {
+			navigator.notification.confirm(
+		        'The event will be on: '+$("#"+id).find(".slot" + 1).val(),  // message
+		        onPrompt,                  // callback to invoke
+		        'Event Registration',            // title
+		        ['Slot1','Slot2','Slot3']            // buttonLabels
+		    );
+		};
+		function onPrompt(buttonIndex) {
+		    
+		    slot = $("#"+id).find(".slot" + buttonIndex).val();
+		    
+/* 		    alert(slot); */
+		    var request = '{"request": "eventReg", \
+						"event": "'+ event +'", \
+						"date": "'+ slot +'", \
+						"name": "' + localStorage.getItem('name') + '",\
+						"email": "'+ localStorage.getItem('email') + '"}';
+			navigator.notification.alert(
+			    "Please be reminded that the event will be on:\n" + slot,  // message
+			    null,         // callback
+			    'Registration',            // title
+			    "OK"                  // buttonName
+			);
+			$.ajax({
+				url: "http://www.ntu-iic.org/app/event_register.php",
+				data: {eventReg: request}, 
+				type: "POST",
+				dataType: "json",
+				success: function (response) {
+					if (response.status == "s") {
+						navigator.notification.alert(
+						    'You have successfully registered this event.',  // message
+						    null,         // callback
+						    'Event Registration',            // title
+						    "OK"                  // buttonName
+						);
+						btn.text("Cancel");
+						btn.removeClass('nr').addClass('r');					
+					}
+					else {
+						alert(response.reason);
+					}
+				}
+			});	
+			
+		};
+		
+
+	}
 });
 
 

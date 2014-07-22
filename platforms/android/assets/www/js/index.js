@@ -33,8 +33,32 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+    	alert("deviceready");
+/*         app.receivedEvent('deviceready'); */
+	    document.addEventListener('online', this.onOnline, false);
+        document.addEventListener('offline', this.onOffline, false);
+        document.addEventListener("resume", this.onResume, false);
     },
+    
+    onOnline: function() {
+    	setTimeout(function() {
+        	alert("online!");
+        }, 0);
+/* 		refreshPage(); */
+    },
+    
+    onOffline: function() {
+    	setTimeout(function() {
+        	alert("offline!");
+        }, 0);
+    },
+    
+    onResume: function() {
+    	setTimeout(function() {
+        	alert("resume!");
+        }, 0);
+    },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 /* 		alert(id); */

@@ -3,45 +3,297 @@
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 
-    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="css/themes/g.min.css" />
+	<link rel="stylesheet" href="jquery.mobile-1.4.3/jquery.mobile.structure-1.4.3.css" />
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
 
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	
-    <meta name="msapplication-tap-highlight" content="no" />
-    <title>Upcoming Events</title>
+<!--     <meta name="msapplication-tap-highlight" content="no" /> -->
+    <title>Login</title>
 </head>
 <body>
 
-<div data-role="page" id="main" class="jqm-demos jqm-home">
-    <div class="login-title" data-role="header" style="">
-    Tell us who you are
+<div data-role="page" id="login-page" class="">
+    <div data-role="header" style="" data-position="fixed">
+<!--
+	    <a class="left-button" data-role="none" id="reg" href="#reg-page" data-transition="slide reverse">
+	    	<div class="label">Register</div>
+	    </a>
+-->
+<!-- 		<h1></h1> -->
+<!--
+		<a class="right-button" data-role="none" id="login" href="">
+			<div class="label">Login</div>
+		</a>
+-->
+		
+
+	    <div class="header">
+	    	<h1 role="heading">&nbsp</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#reg-page" style="" id="" data-transition="slide reverse">
+				<div class="label">Register</div>
+			</a>
+			<a class="right-button ui-btn-right event-control" data-role="button" href="" style="" id="login">
+				<div class="label">Login</div>
+			</a>
+	    </div>
+
+
+
     </div><!-- /header -->
     <div data-role="main" class="ui-content" id="content" style="display: block; width: 70%; margin: 20px auto;">
-    	<label for="1">Matric. No. :</label>
-    	<input type="text" id="1" name="1">
-    	<label for="2">NTU Email :</label>
-    	<input type="text" id="2" name="2">
+    	<p class="login-title"><img src="images/Logo.png" style="width: 100%;"></p>
+    	<h1>&nbsp</h1>
+    	<form id="login" action="http://www.ntu-iic.org/app/login.php" method="post">
+    		<label for="1">Name :</label>
+	    	<input type="text" id="name" name="name" style="border-width: 1px; border-style: solid;">
+	    	<label for="2">Email :</label>
+	    	<input type="text" id="email" name="email" style="border-width: 1px; border-style: solid;">
+    	</form>
     </div><!-- /content -->
-    <div data-role="footer" class="footer ui-grid-a" style="background: #2d6d93;">
-    	<a class="ui-block-a footer-button" style="" id="reg">Register</a>
-    	<a class="ui-block-b footer-button" style="" id="next">Next</a>
-	</div><!-- /footer -->
 </div>
 
+<div data-role="page" id="reg-page" class="">
+    <div data-role="header" style="" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">&nbsp</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#login-page" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+			<a class="right-button ui-btn-right event-control" data-role="button" href="" style="" id="finish">
+				<div class="label">Finish</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content" id="content" style="display: block; width: 70%; margin: 20px auto;">
+    	<p class="login-title">Register</p>
+    	<form id="login" action="http://www.ntu-iic.org/app/register.php" method="post">
+    		<label for="1">Name* :</label>
+	    	<input type="text" id="1" name="name" style="border-width: 1px; border-style: solid;">
+	    	<label for="3">Email* :</label>
+	    	<input type="text" id="3" name="email" style="border-width: 1px; border-style: solid;">
+	    	<label for="4">Matric No :</label>
+	    	<input type="text" id="4" name="matric-no" style="border-width: 1px; border-style: solid;">
+	    	<label for="5">Phone No* :</label>
+	    	<input type="text" id="5" name="phone-no" style="border-width: 1px; border-style: solid;">
+	    	<label>Dietary Restriction :</label>
+	    	<div class="ui-field-contain">
+			    <fieldset data-role="controlgroup" data-mini="true">
+				   <input type="checkbox" value="Pork" id="6" class="custom" />
+				   <label for="6">No Pork</label>
+				   <input type="checkbox" value="Beef" id="7" class="custom" />
+				   <label for="7">No Beef</label>			    
+				   <input type="checkbox" value="Diary" id="8" class="custom" />
+				   <label for="8">No Dairy</label>
+				   <input type="checkbox" value="Vegetarian" id="9" class="custom" />
+				   <label for="9">Vegetarian</label>
+			    </fieldset>
+			</div>
+    	</form>	    	
+    </div><!-- /content -->
+</div>
+
+
 <script>
+$(document).on({
+	ajaxStart: function() { 
+		$.mobile.loading('show');
+	},
+	ajaxStop: function() {
+		$.mobile.loading('hide');
+	}    
+});
+
+
+
+
+var loginInfo = {name: "", email: ""};
+var regInfo = {name: "", email: "", matricNo: "", phoneNo: "", dr: ""};
+
+/*
 $("#next").click(function () {
 	$.ajax({
 		
 	});
 });
+*/
+
+$(document).on('ready', function () {
+	localStorage.clear();
+	$("#1").on("input", (function () {
+		regInfo.name = $(this).val();
+/* 		alert($(this).val()); */
+	}));
+/*
+	$("#2").on("input", (function () {
+		regInfo.salutation = $(this).val();
+*/
+/* 		alert($(this).val()); 
+	}));*/
+	$("#3").on("input", (function () {
+		regInfo.email = $(this).val();
+/* 		alert($(this).val()); */
+	}));
+	$("#4").on("input", (function () {
+		regInfo.matricNo = $(this).val();
+/* 		alert($(this).val()); */
+	}));
+	$("#5").on("input", (function () {
+		regInfo.phoneNo = $(this).val();
+/* 		alert($(this).val()); */
+	}));
+	$("#6, #7, #8, #9").on("change", (function () {
+		regInfo.dr = "";
+		for (i=6; i<10; i++) {
+			if ($("#"+i).is(':checked')) {
+				regInfo.dr += $("#"+i).val() + " ";
+			}
+		}
+/* 		alert(regInfo.dr); */
+	
+/*
+		if($(this).is(':checked')) {
+			regInfo.dr.push($(this).val());
+		}
+		else {
+			var index = regInfo.dr.indexOf($(this).val());
+			if (index>-1) {
+				regInfo.dr.splice(index, 1);
+			}
+		}
+*/
+	}));
+	$("#name").on("input", (function () {
+		loginInfo.name = $(this).val();
+	}));
+	$("#email").on("input", (function () {
+		loginInfo.email = $(this).val();
+	}));
+	$("#login").on("click", (function () {
+		if (loginInfo.name == "") {
+/*
+			navigator.notification.alert(
+			    "Name can't be empty.",  // message
+			    null,         // callback
+			    'Login',            // title
+			    "OK"                  // buttonName
+			);
+*/
+		}
+		else if (loginInfo.email == "") {
+/*
+			navigator.notification.alert(
+			    "Email can't be empty.",  // message
+			    null,         // callback
+			    'Login',            // title
+			    "OK"                  // buttonName
+			);		
+*/
+		}
+		else {
+			$.ajax({
+				url: "http://www.ntu-iic.org/app/login.php",
+				type: "POST",
+				dataType: "json",
+				data: {loginInfo: JSON.stringify(loginInfo)},
+				success: function (response) {
+/* 					alert(response); */
+					if (response.status == "s") {
+/* 						alert("success"); */
+/*
+						navigator.notification.alert(
+						    "Welcome, "+loginInfo.name,  // message
+						    null,         // callback
+						    'Login',            // title
+						    "OK"                  // buttonName
+						);
+*/
+						localStorage.setItem("name", loginInfo.name);
+						localStorage.setItem("email", loginInfo.email);
+						window.location.replace("index.html");
+					}
+					else {
+/*
+						navigator.notification.alert(
+						    "Sorry, we can't find your profile from our database.",  // message
+						    null,         // callback
+						    'Login',            // title
+						    "OK"                  // buttonName
+						);
+*/
+					}
+				}
+			});
+		}
+	}));
+	
+	$("#finish").on("click", (function () {
+		if (regInfo.name == "") {
+			navigator.notification.alert(
+			    "Name can't be empty.",  // message
+			    null,         // callback
+			    'User Registration',            // title
+			    "OK"                  // buttonName
+			);
+		}
+		else if (regInfo.email == "") {
+			navigator.notification.alert(
+			    "Email can't be empty.",  // message
+			    null,         // callback
+			    'User Registration',            // title
+			    "OK"                  // buttonName
+			);		
+		}
+		else if (regInfo.phoneNo == "") {
+			navigator.notification.alert(
+			    "Phone no. can't be empty",  // message
+			    null,         // callback
+			    'User Registration',            // title
+			    "OK"                  // buttonName
+			);	
+		}
+		else {
+			$.ajax({
+				url: "http://www.ntu-iic.org/app/userregister.php",
+				type: "POST",
+				dataType: "json",
+				data: {regInfo: JSON.stringify(regInfo)},
+				success: function (response) {
+/* 					alert(response); */
+					if (response.status == "s") {
+						localStorage.setItem('name', regInfo.name);
+						localStorage.setItem('email', regInfo.email);
+						navigator.notification.alert(
+						    "Registration is successful.\nWelcome, "+localStorage.getItem('name'),  // message
+						    null,         // callback
+						    'User Registration',            // title
+						    "OK"                  // buttonName
+						);		
+						window.location.replace("index.html");				
+					}
+					else if (response.status == "f" ) {
+						navigator.notification.alert(
+						    "Registration is not successful.\n"+response.reason,  // message
+						    null,         // callback
+						    'User Registration',            // title
+						    "OK"                  // buttonName
+						);							
+					}
+					else {
+						alert("error");
+					}
+				}
+			});
+		}
+	}));
+});
+
 </script>
 </body>
 </html>

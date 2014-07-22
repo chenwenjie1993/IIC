@@ -1,4 +1,24 @@
 /Users/Wenjie/IIC/platforms/android/ant-build/classes.dex : \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$2.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$2.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$3.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2$4.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$2.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$2.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$3.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3$4.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$3.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$4$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$4.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$5$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$5.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager$1.class \
+/Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$1.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$2.class \
 /Users/Wenjie/IIC/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar.class \
