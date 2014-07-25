@@ -370,12 +370,11 @@
 /Users/Wenjie/IIC/platforms/android/assets/www/font/HelveticaNeue.dfont \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/ajax-loader.gif \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/backBtn.svg \
-/Users/Wenjie/IIC/platforms/android/assets/www/images/example1.png \
-/Users/Wenjie/IIC/platforms/android/assets/www/images/example2.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-png \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-svg \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/Logo.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/nextBtn.svg \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-png/action-black.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-png/action-white.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-png/alert-black.png \
@@ -576,6 +575,11 @@
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-svg/user-white.svg \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-svg/video-black.svg \
 /Users/Wenjie/IIC/platforms/android/assets/www/images/icons-svg/video-white.svg \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample/1.png \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample/2.png \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample/3.png \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample/4.png \
+/Users/Wenjie/IIC/platforms/android/assets/www/images/sample/5.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/img/logo.png \
 /Users/Wenjie/IIC/platforms/android/assets/www/jquery.mobile-1.4.3/images \
 /Users/Wenjie/IIC/platforms/android/assets/www/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css \

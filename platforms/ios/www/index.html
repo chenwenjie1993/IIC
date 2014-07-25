@@ -7,16 +7,15 @@
 
 	<style>
 	.swiper-container {
-	  width: 100%;
-	  height: 300px;
-	  color: #fff;
-	  text-align: center;
-	}
-	.red-slide {
-	  background: #ca4040;  
-/* remember to reset background	   */
+		  width: 100%;
+		  height: 300px;
+		  color: #fff;
+		  text-align: center;  
 	}
 
+	.swiper-slide {
+		background: gray;
+	}
 	</style>
 
 	<link rel="stylesheet" href="css/themes/g.min.css" />
@@ -83,9 +82,9 @@
 		<div data-role="ui-panel-inner"><ul class="" data-role="listview">\
 		<li><a href="" style="" data-transition="slide reverse" id="home">Event Sign-Up</a></li>\
 		<li><a href="#quiz-page" style="" data-transition="slide">Monthly Quiz</a></li>\
-		<li><a href="" style="" data-transition="slide" data-ajax="false">Our Events</a></li>\
-		<li><a href="#about-us" style="" data-transition="slide" data-ajax="false">About Us</a></li>\
-		<li><a href="#contact-us" style="" data-transition="slide" data-ajax="true">Contact Us</a></li>\
+		<li><a href="" style="" data-transition="slide">Our Events</a></li>\
+		<li><a href="#about-us" style="" data-transition="slide">About Us</a></li>\
+		<li><a href="#contact-us" style="" data-transition="slide">Contact Us</a></li>\
 		<li><a href="login.html" style="" rel="external">Logout</a></li></ul></div></div>';
 		
 		$(document).one('pagebeforecreate', function () {
@@ -165,11 +164,13 @@
 
 <!-- event details page <page 1-8>-->
 <div data-role="page" id="page1" class="pages" data-ajax="false">
-    <div data-role="header" style="border: none;" data-position="fixed">
-	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
-			<a class="right-button ui-btn-right event-control" data-role="button" href="" style="">
+    <div data-role="header" style="border: none; margin: 0;" data-position="fixed">
+	    <div class="header" style="border: none; margin: 0;">
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -185,16 +186,17 @@
 </div>
 
 <div data-role="page" id="page2" class="pages" data-ajax="false">
-    <div data-role="header" style="border: none;" data-position="fixed">
-	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+    <div data-role="header" style="border: none; margin: 0;" data-position="fixed">
+	    <div class="header" style="border: none; margin: 0;">
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
-    </div><!-- /header -->
-    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+    </div><!-- /header -->    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
 
 		<div class="detail">
 		    <div id="2">
@@ -205,10 +207,12 @@
 </div>
 
 <div data-role="page" id="page3" class="pages" data-ajax="false">
-    <div data-role="header" style="border: none;" data-position="fixed">
-	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+    <div data-role="header" style="border: none; " data-position="fixed">
+	    <div class="header" style="border: none;">
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -227,8 +231,10 @@
 <div data-role="page" id="page4" class="pages" data-ajax="false">
     <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -247,8 +253,10 @@
 <div data-role="page" id="page5" class="pages" data-ajax="false">
     <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -267,8 +275,10 @@
 <div data-role="page" id="page6" class="pages" data-ajax="false">
     <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -287,8 +297,10 @@
 <div data-role="page" id="page7" class="pages" data-ajax="false">
     <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -307,8 +319,10 @@
 <div data-role="page" id="page8" class="pages" data-ajax="false">
     <div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">IIC Event</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    	<h1 role="heading">Event Detail</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 			<a class="right-button ui-btn-right" data-role="none" href="">
 				<div class="label nr">Join Now</div>
 			</a>
@@ -344,7 +358,7 @@
 <div data-role="page" id="quiz-question" data-ajax="true">
 	<div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">Quiz</h1>
+	    	<h1 role="heading" id="quiz-title">Quiz</h1>
 			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
 	    </div>
     </div><!-- /header -->
@@ -354,7 +368,7 @@
 </div>
 
 <!-- about us -->
-<div data-role="page" id="about-us" data-ajax="false">
+<div data-role="page" id="about-us" data-ajax="true">
 	<div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
 	    	<h1 role="heading">About Us</h1>
@@ -382,7 +396,7 @@
 </div>
 
 <!-- contact us -->
-<div data-role="page" id="contact-us" data-ajax="false">
+<div data-role="page" id="contact-us" data-ajax="true">
 	<div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
 	    	<h1 role="heading">Contact Us</h1>
@@ -429,7 +443,7 @@ $(document).on({
 	},
 	ajaxStop: function() {
 		$.mobile.loading('hide');
-	}    
+	} 
 });
 
 
@@ -447,6 +461,7 @@ $(document).on("pagecontainerchange", function () {
 					$.mobile.changePage("#quiz-question", {transition: "slide"});
 					var idNS = $(this).attr('id').substr(4, id.length-4);
 					$("#qFrame").attr('src', $("#q"+idNS).val()); 
+					$("#quiz-title").text($("#quiz"+idNS).text());
 				});
 				
 			}
@@ -475,7 +490,6 @@ $(document).on("pagecontainerchange", function () {
 		var idNS = id.substr(4, id.length-4);
 		var load = idNS + ".html";
 		var event = $("#event"+idNS).text();
-		/* alert(event); */
 		if (id != "page0") {
 			$.ajax({
 				url: load,
@@ -488,9 +502,7 @@ $(document).on("pagecontainerchange", function () {
 									"email": "'+ localStorage.getItem('email')+'", \
 									"date": "123", \
 									"name": "'+ localStorage.getItem('name')+'"} ';
-					$('#'+id).find('h1').text(event);
-/* 					alert(request); */
-
+/* 					$('#'+id).find('h1').text(event); */
 					$.ajax({
 						url: "http://www.ntu-iic.org/app/event_status.php",
 						data: {event: request},
@@ -530,10 +542,7 @@ $(document).on('ready', function () {
 				autoplay: 3000
 			});
 			$("#event-list").listview();
-/* 			alert($(window).height()); */
 			$(".scrollingArea").height($(window).height()-47);
-/* 			alert($(".scrollingArea").height()); */
-
 		}
 	});
 	$('#home').on('click', function () {
@@ -543,13 +552,11 @@ $(document).on('ready', function () {
 
 
 $(".detail").on( "swipeleft", function() {
-/* 	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id')); */
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
 	var idNS = id.substr(4, id.length-4);
 	var idN = parseInt(idNS);
 	var nextN = idN + 1;
 	var nextPage = "#page" + nextN;
-/* 	alert(nextPage); */
 	if ($("#event-count").val()>idN) { 
 		$.mobile.changePage(nextPage, {transition: "slide"});
 		
@@ -577,14 +584,7 @@ $(document).on('click', ".closeBtn", function() {
 	$( "#mypanel" ).panel( "close" );
 });
 
-/*
-$(".nr").on('click', function () {
-	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
-	var idNS = id.substr(4, id.length-4);
-	var event = $("#event"+idNS).text();
 
-});
-*/
 
 $(".label").on('click', function () {
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');

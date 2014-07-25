@@ -125,6 +125,7 @@ h1 {
 	height: 100% !important; 
 	width: 100% !important;
 	overflow: hidden;
+	border: none !important;
 }
 
 h2 {
@@ -162,7 +163,7 @@ h3 {
 }
 
 .left-arrow {
-	background:	url(../images/backBtn.svg);
+	background:	url(../images/backBtn.svg) !important;
 	background-color: transparent !important;
 	background-repeat: no-repeat;
 	background-position: left center; 
@@ -185,14 +186,14 @@ h3 {
 .left-button {
 	text-shadow: none;
 	text-decoration: none;
-	margin-top: 9px !important;
+	margin-top: 8px !important;
 	margin-left: 7px !important;
 }
 
 .right-button {
 	text-shadow: none;
 	text-decoration: none;
-	margin-top: 9px !important;
+	margin-top: 8px !important;
 	margin-right: 7px !important;
 }
 
@@ -229,7 +230,7 @@ h3 {
 	right: 0; 
 	top: 0; 
 	margin: 0 !important;
-	padding: 13px !important;
+	padding: 12px !important;
 	border: none;
 	background: transparent !important;
 }
@@ -248,7 +249,7 @@ h3 {
 	left: 0; 
 	top: 0; 
 	margin: 0 !important;
-	padding: 13px !important;
+	padding: 12px !important;
 	border: none;
 	background: transparent !important;
 }
@@ -261,3 +262,5 @@ h3 {
   overflow-y: scroll !important;
   -webkit-overflow-scrolling: touch;
 }
+
+li
