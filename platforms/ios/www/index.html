@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="index.appcache">
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -50,6 +50,7 @@
 		$.support.cors = true;
 	    $.mobile.allowCrossDomainPages = true;
 	    
+	    
 	    if (localStorage.getItem('name') == undefined) {
 	        window.location.replace("login.html");
 	    }
@@ -78,13 +79,14 @@
 	<script>
 		var panel = '<div data-role="panel" class="" data-position="left" data-display="push" id="mypanel" data-theme="a">\
 		<h2>IIC</h2>\
-		<a class="ui-btn ui-btn-right ui-icon-delete ui-btn-icon-notext closeBtn"></a>\
+		<a class="ui-btn ui-btn-right ui-icon-delete ui-btn-icon-notext closeBtn ui-alt-icon"></a>\
 		<div data-role="ui-panel-inner"><ul class="" data-role="listview">\
-		<li><a href="" style="" data-transition="slide reverse" id="home">Event Sign-Up</a></li>\
-		<li><a href="#quiz-page" style="" data-transition="slide">Monthly Quiz</a></li>\
-		<li><a href="" style="" data-transition="slide">Our Events</a></li>\
-		<li><a href="#about-us" style="" data-transition="slide">About Us</a></li>\
-		<li><a href="#contact-us" style="" data-transition="slide">Contact Us</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="home">Event Sign-Up</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="event-reg-link">Events Registered</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="mon-quiz-link">Finance Quiz</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="our-event-link">Our Events</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="about-us-link">About Us</a></li>\
+		<li class="ui-alt-icon"><a href="" style="" id="contact-us-link">Contact Us</a></li>\
 		<li><a href="login.html" style="" rel="external">Logout</a></li></ul></div></div>';
 		
 		$(document).one('pagebeforecreate', function () {
@@ -107,39 +109,28 @@
     function onDeviceReady() {
         document.addEventListener("resume", onResume, false);
         document.addEventListener("online", onOnline, false);
-/*         document.addEventListener("offline", onOffline, false); */
+        document.addEventListener("offline", onOffline, false);
     }
 
-    // Handle the resume event
-    //
+
     function onResume() {
     	refreshPage();
-/*
-    	setTimeout(function() {
-        	alert("resume!");
-        }, 0);
-*/
     }
     
     function onOnline() {
-/*     	alert("online!"); */
-/*     	refreshPage(); */
-/*
-    	setTimeout(function() {
-        	alert("online!");
-        }, 0);
-*/
-/* 		refreshPage(); */
     }
     
     function onOffline() {
-/*
     	setTimeout(function() {
-        	alert("offline!");
-        }, 0);
-*/
+			navigator.notification.alert(
+			    "Please connect to network to get the information updated.",  // message
+			    null,         // callback
+			    'Network',            // title
+			    "OK"                  // buttonName
+			);		
+		}, 0);
     }
-
+    
     </script>
 
     <meta name="msapplication-tap-highlight" content="no" />
@@ -156,7 +147,7 @@
 			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
 	    </div>
     </div><!-- /header -->
-    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; display: block;"  data-position="fixed" id="0" data-iscroll>    
+    <div data-role="main" class="ui-content" style="padding: 0;" id="0"> 
 
     </div><!-- /content -->   
 </div>
@@ -170,7 +161,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -192,11 +183,13 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
-    </div><!-- /header -->    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+    </div><!-- /header -->    
+    
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
 
 		<div class="detail">
 		    <div id="2">
@@ -213,7 +206,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -235,7 +228,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -257,7 +250,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -279,7 +272,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -301,7 +294,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -323,7 +316,7 @@
 			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
 				<div class="label">Back</div>
 			</a>
-			<a class="right-button ui-btn-right" data-role="none" href="">
+			<a class="right-button ui-btn-right join" data-role="button" href="">
 				<div class="label nr">Join Now</div>
 			</a>
 	    </div>
@@ -343,7 +336,7 @@
 <div data-role="page" id="quiz-page" data-ajax="false">
 	<div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
-	    	<h1 role="heading">Monthly Quiz</h1>
+	    	<h1 role="heading">Finance Quiz</h1>
 			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
 	    </div>
     </div><!-- /header -->
@@ -355,17 +348,125 @@
 </div>
 
 <!-- quiz question page -->
-<div data-role="page" id="quiz-question" data-ajax="true">
+<div data-role="page" id="quiz-question" data-ajax="false">
 	<div data-role="header" style="border: none;" data-position="fixed">
 	    <div class="header">
 	    	<h1 role="heading" id="quiz-title">Quiz</h1>
-			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+			<a class="left-button ui-btn-left register" data-role="button" href="#quiz-page" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
 	    </div>
     </div><!-- /header -->
 	<div data-role="main" class="ui-content" style="padding: 0; -webkit-overflow-scrolling: touch !important; overflow:auto !important;" id="question-container">
 		<iframe id="qFrame" src="" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
     </div><!-- /content -->
 </div>
+
+
+<!-- our event list page -->
+<div data-role="page" id="our-event" data-ajax="true">
+	<div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">Our Events</h1>
+			<a role="button" data-role="button" herf="#mypanel" class="ui-btn ui-btn-left ui-icon-bullets ui-btn-icon-notext ui-nodisc-icon panelBtn" style="padding-top: 10px;"></a>
+	    </div>
+    </div><!-- /header -->
+	<div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+		<ul data-role="listview" id="event-list2">
+			<li class="ui-alt-icon">
+				<a href="#ncf" data-transition="slide">National Cashflow Competition</a>
+			</li>
+			<li class="ui-alt-icon">
+				<a href="#sfc" data-transition="slide">Singapore Financial Conference</a>
+			</li>
+			<li class="ui-alt-icon">
+				<a href="#finex" data-transition="slide">Financial Expedition</a>
+			</li>
+		</ul>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="ncf" class="pages" data-ajax="true">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">NCF</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#our-event" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+			<div style="width: 100%; overflow: hidden;" class="swiper-container">
+			<img src="images/events/ncf.png"  class="pic">
+			</div>
+			
+			<h3>What is National Cashflow Competition?</h3>
+			<div class="des">
+National Cashflow Competition features the use of the CASHFLOW 101 board game created by Robert Kiyosaki, author of best-seller “Rich Dad Poor Dad”. An exciting game, stimulating life as a rat race and teaches practical finance knowledge on wealth management to players. 
+			</div>
+			<h3>What can you expect?</h3>
+			<div class="des">
+-	Fundamentals of various investment concepts<br>
+-	Trained in financial literacy<br>
+-	Hone valuable financial skills<br>
+-	Fun learning experience with friends and facilitators
+			</div>
+
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="sfc" class="pages" data-ajax="true">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">SFC</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#our-event" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+			<div style="width: 100%; overflow: hidden;" class="swiper-container">
+			<img src="images/events/sfc.png"  class="pic">
+			</div>
+			<h3>What is Singapore Financial Conference?</h3>
+			<div class="des">
+Singapore Financial Conference is an annual event organized by NTU Investment Interactive Club, seeking to give our participants an opportunity to gain valuable financial insights from the nation’s top investing gurus. The conference includes sharing sessions with distinguished speakers from different fields who would share their financial expertise on a wide range of investment topics and career advice.
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+<div data-role="page" id="finex" class="pages" data-ajax="true">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">FINEX</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#our-event" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content scrollingArea" style="padding: 0; ">
+
+		<div class="detail">
+			<div style="width: 100%; overflow: hidden;" class="swiper-container">
+			<img src="images/events/finex.jpg"  class="pic">
+			</div>
+			<h3>FINEX</h3>
+			<div class="des">
+Financial Expedition, FINEX in short, is a team-based expedition challenge similar to the Amazing Race. Since 2009, FINEX aims to prepare youths with the necessary financial skills and knowledge. Through a series of games and activities, students get to learn key financial concepts involving investments, budgeting and trade-offs.
+			</div>
+		</div>
+    </div><!-- /content -->
+</div>
+
+
+
+
 
 <!-- about us -->
 <div data-role="page" id="about-us" data-ajax="true">
@@ -383,13 +484,12 @@
 			</div>
 			<h3>Vision</h3>
 			<div class="des">
-	Our club vision, <b>“Towards a Knowledgeable Investing Student Population”</b> is the driving force behind all our projects. IIC plans to realize this vision through three objectives:
-			</div>
-	<ul>
-	<li>Promote greater awareness for the need of investment especially among young students and at the same time develop students' interest in financial market.</li>
-	<li>Assist IIC members to develop and further hone their practical investing skills and strategies.</li>
-	<li>Foster close interactions between various educational institutions and the financial community.</li>
-	</ul>
+	Our club vision, <br><b>“Towards a Knowledgeable Investing Student Population”</b><br> is the driving force behind all our projects. IIC plans to realize this vision through three objectives:
+				<ul>
+				<li>Promote greater awareness for the need of investment especially among young students and at the same time develop students' interest in financial market.</li>
+				<li>Assist IIC members to develop and further hone their practical investing skills and strategies.</li>
+				<li>Foster close interactions between various educational institutions and the financial community.</li>
+				</ul>
 			</div>
 		</div>
     </div><!-- /content -->
@@ -434,6 +534,24 @@
 
 
 
+<div data-role="page" id="event-registered" class="pages" data-ajax="true">
+    <div data-role="header" style="border: none;" data-position="fixed">
+	    <div class="header">
+	    	<h1 role="heading">Events Registered</h1>
+			<a class="left-button ui-btn-left register" data-role="button" href="#page0" style="" id="" data-transition="slide reverse">
+				<div class="label">Back</div>
+			</a>
+	    </div>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content" style="padding: 0; ">
+		<div class="detail">
+		
+		</div>
+    </div><!-- /content -->
+</div>
+
+
+
 
 
 <script>
@@ -453,7 +571,7 @@ $(document).on("pagecontainerchange", function () {
 
 	if (id == "quiz-page") {
 		$.ajax({
-			url: "quiz-list.html",
+			url: "http://www.ntu-iic.org/app_content/quiz-list.html",
 			success: function (response) {
 				$('#quiz-list').html(response);
 				$(".quiz").listview();
@@ -463,16 +581,12 @@ $(document).on("pagecontainerchange", function () {
 					$("#qFrame").attr('src', $("#q"+idNS).val()); 
 					$("#quiz-title").text($("#quiz"+idNS).text());
 				});
-				
 			}
 		});
 	}
-	else if (id == "quiz-question") {
-        
-	}
 	else if (id == "page0") {
 		$.ajax({
-			url: "events-sign-up.html",
+			url: "http://www.ntu-iic.org/app_content/events-sign-up.html",
 			success: function (response) {
 				$('#0').html(response);
 				var swiper = new Swiper('.swiper-container',{
@@ -486,52 +600,83 @@ $(document).on("pagecontainerchange", function () {
 			}
 		});
 	}
+	else if (id == "event-registered") {
+		var request = '{"email":"' + localStorage.getItem("email") + '"}';
+		$.ajax({
+			url: "http://www.ntu-iic.org/app/check_event_registered.php",
+			data: {email: request}, 
+			type: "GET",
+			dataType: "json",
+			success: function (response) {
+				var content = "";
+				var eventList = response.event;
+				var index;
+				for (index = 0; index < eventList.length; index++) {
+					content += "<h3 style='background: #1c4258'>Event: "+eventList[index].event+"</h3>";
+					content += "<h3>Date: "+eventList[index].date+"</h3>";
+				};
+				$('#event-registered').find(".detail").html(content);
+			}
+	});		
+	}
+	else if (id == "quiz-question") {
+        
+	}
+	else if (id == "our-event") {
+		
+	}
+	else if ((id == "ncf") || (id == "sfc") || (id == "finex")) {
+		
+	}
+	else if (id == "about-us") {
+		
+	}
+	else if (id == "contact-us") {
+		
+	}
 	else {
 		var idNS = id.substr(4, id.length-4);
-		var load = idNS + ".html";
+		var load = "http://www.ntu-iic.org/app_content/" + idNS + ".html";
 		var event = $("#event"+idNS).text();
-		if (id != "page0") {
-			$.ajax({
-				url: load,
-				success: function (response) {
-					//load new event page
-					$('#'+idNS).html(response);
-					//send server eventTest request
-					var request = '{"request": "eventTest", \
-									"event": "'+ event +'", \
-									"email": "'+ localStorage.getItem('email')+'", \
-									"date": "123", \
-									"name": "'+ localStorage.getItem('name')+'"} ';
-/* 					$('#'+id).find('h1').text(event); */
-					$.ajax({
-						url: "http://www.ntu-iic.org/app/event_status.php",
-						data: {event: request},
-						type: "POST",
-						dataType: "json",
-						success: function (response) {
 
-							var obj = $('#'+id).find('.label');
+		$.ajax({
+			url: load,
+			success: function (response) {
+				//load new event page
+				$('#'+idNS).html(response);
+				//send server eventTest request
+				var request = '{"request": "eventTest", \
+								"event": "'+ event +'", \
+								"email": "'+ localStorage.getItem('email')+'", \
+								"name": "'+ localStorage.getItem('name')+'"} ';
+				$.ajax({
+					url: "http://www.ntu-iic.org/app/event_status.php",
+					data: {event: request},
+					type: "GET",
+					dataType: "json",
+					success: function (response) {
 
-							if (response.status == "r") { //event has been registered
-								obj.text('Cancel');
-								$(obj).removeClass('nr').addClass('r');
-							}
-							else if (response.status == "nr") { //event has not been registered
+						var obj = $('#'+id).find('.nr');
 
-							}
+						if ((response.status == "r") && (obj != null)) { //event has been registered
+							obj.text('Cancel');
+							$(obj).removeClass('nr').addClass('r');
 						}
-					});
+						else if (response.status == "nr") { //event has not been registered
 
-				}
-			});
-		}
+						}
+					}
+				});
+
+			}
+		});
 	}
 });
 
 $(document).on('ready', function () {
 	
 	$.ajax({
-		url: "events-sign-up.html",
+		url: "http://www.ntu-iic.org/app_content/events-sign-up.html",
 		success: function (response) {
 			$('#0').html(response);
 			var swiper = new Swiper('.swiper-container',{
@@ -548,6 +693,22 @@ $(document).on('ready', function () {
 	$('#home').on('click', function () {
 		$.mobile.changePage("#page0", {transition: "slide reverse", allowSamePageTransition: true});
 	});
+	$('#event-reg-link').on('click', function () {
+		$.mobile.changePage("#event-registered", {transition: "slide", allowSamePageTransition: true});
+	});
+	$('#mon-quiz-link').on('click', function () {
+		$.mobile.changePage("#quiz-page", {transition: "slide", allowSamePageTransition: true});
+	});
+	$('#our-event-link').on('click', function () {
+		$.mobile.changePage("#our-event", {transition: "slide", allowSamePageTransition: true});
+	});
+	$('#about-us-link').on('click', function () {
+		$.mobile.changePage("#about-us", {transition: "slide", allowSamePageTransition: true});
+	});
+	$('#contact-us-link').on('click', function () {
+		$.mobile.changePage("#contact-us", {transition: "slide", allowSamePageTransition: true});
+	});
+
 });
 
 
@@ -560,7 +721,7 @@ $(".detail").on( "swipeleft", function() {
 	if ($("#event-count").val()>idN) { 
 		$.mobile.changePage(nextPage, {transition: "slide"});
 		
-		$("#"+nextN).load(nextN + ".html",function(responseTxt,statusTxt,xhr){
+		$("#"+nextN).load("http://www.ntu-iic.org/app/" + nextN + ".html",function(responseTxt,statusTxt,xhr){
 	      if(statusTxt=="success"){};
 	      if(statusTxt=="error"){};
 	    });
@@ -569,10 +730,8 @@ $(".detail").on( "swipeleft", function() {
 
 
 $(".detail").on( "swiperight", function() {
-/* 	alert($(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id'));  */
 	var id = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
 	var next = "#page" + (parseInt(id.substr(4, id.length-4))-1);
-/* 	alert(next); */
 	$.mobile.changePage(next, {transition: "slide", reverse: true});
 });
 
@@ -598,7 +757,7 @@ $(".label").on('click', function () {
 		$.ajax({
 			url: "http://www.ntu-iic.org/app/event_cancel.php",
 			data: {eventCC: request}, 
-			type: "POST",
+			type: "GET",
 			dataType: "json",
 			success: function (response) {
 				if (response.status == "s") {
@@ -628,7 +787,15 @@ $(".label").on('click', function () {
 		}
 		message += "Slot" + slotCount + ": " + $("#"+id).find(".slot" + slotCount).val();
 		var slot = "";
-		if (slotCount == "2") {
+		if (slotCount == "0") {
+			navigator.notification.alert(
+			    'Registration has not been opened. Coming soon!',  // message
+			    null,         // callback
+			    'Event Registration',            // title
+			    'OK'                  // buttonName
+			);			
+		}
+		else if (slotCount == "2") {
 			navigator.notification.confirm(
 		        message,  // message
 		        onPrompt,                  // callback to invoke
@@ -656,27 +823,28 @@ $(".label").on('click', function () {
 		    
 		    slot = $("#"+id).find(".slot" + buttonIndex).val();
 		    
-/* 		    alert(slot); */
 		    var request = '{"request": "eventReg", \
 						"event": "'+ event +'", \
 						"date": "'+ slot +'", \
 						"name": "' + localStorage.getItem('name') + '",\
 						"email": "'+ localStorage.getItem('email') + '"}';
+/*
 			navigator.notification.alert(
 			    "Please be reminded that the event will be on:\n" + slot,  // message
 			    null,         // callback
 			    'Registration',            // title
 			    "OK"                  // buttonName
 			);
+*/
 			$.ajax({
 				url: "http://www.ntu-iic.org/app/event_register.php",
 				data: {eventReg: request}, 
-				type: "POST",
+				type: "GET",
 				dataType: "json",
 				success: function (response) {
 					if (response.status == "s") {
 						navigator.notification.alert(
-						    'You have successfully registered this event.',  // message
+						    'You have successfully registered this event.\nPlease be reminded that the event will be on:\n' +slot,  // message
 						    null,         // callback
 						    'Event Registration',            // title
 						    "OK"                  // buttonName
@@ -695,7 +863,6 @@ $(".label").on('click', function () {
 
 	}
 });
-
 
 </script>
 </body>

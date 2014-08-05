@@ -31,9 +31,9 @@ body {
 }
 */
 h1 {
-    font-size:16px;
+    font-size: 16px;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     text-align:center;
     margin: 0;
     display: block;
@@ -61,7 +61,7 @@ h1 {
     padding-bottom: 7px !important;
     background: #2d6d93 !important;
     color: white;
-    border: none;
+    border: none !important;
 }
 
 .panelBtn {
@@ -78,6 +78,7 @@ h1 {
 	background: transparent !important;
 	border: none !important;
 	margin-top: 5px;
+	color: black;
 }
 
 #main * {
@@ -145,7 +146,7 @@ h3 {
 }
 
 .des {
-	padding: 20px 10px;
+	padding: 20px 10px 40px 10px;
 	font-family: Helvetica;
 	overflow: scroll;
 }
@@ -214,13 +215,12 @@ h3 {
 }
 
 
-
-
 .scrollable {
     overflow: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
+
 .scrollable * {
     -webkit-transform: translate3d(0,0,0);
 }
@@ -240,6 +240,10 @@ h3 {
 	margin: 0;
 }
 
+#event-list2 {
+	margin: 0;
+}
+
 .quiz {
 	margin: 0 !important;
 }
@@ -254,6 +258,16 @@ h3 {
 	background: transparent !important;
 }
 
+.join {
+	right: 0; 
+	top: 0; 
+	margin: 0 !important;
+	padding: 12px !important;
+	border: none;
+	background: transparent !important;
+}
+
+
 
 .scrollingArea
 {
@@ -263,4 +277,13 @@ h3 {
   -webkit-overflow-scrolling: touch;
 }
 
-li
+
+.ui-header {
+	border: none !important;
+	padding: 0 !important;
+
+}
+
+li .ui-icon {
+    color: #000000 !important;
+}

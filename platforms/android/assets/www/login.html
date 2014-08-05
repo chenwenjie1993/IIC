@@ -21,19 +21,6 @@
 
 <div data-role="page" id="login-page" class="">
     <div data-role="header" style="" data-position="fixed">
-<!--
-	    <a class="left-button" data-role="none" id="reg" href="#reg-page" data-transition="slide reverse">
-	    	<div class="label">Register</div>
-	    </a>
--->
-<!-- 		<h1></h1> -->
-<!--
-		<a class="right-button" data-role="none" id="login" href="">
-			<div class="label">Login</div>
-		</a>
--->
-		
-
 	    <div class="header">
 	    	<h1 role="heading">&nbsp</h1>
 			<a class="left-button ui-btn-left register" data-role="button" href="#reg-page" style="" id="" data-transition="slide reverse">
@@ -43,14 +30,13 @@
 				<div class="label">Login</div>
 			</a>
 	    </div>
-
-
-
     </div><!-- /header -->
+    
+    
     <div data-role="main" class="ui-content" id="content" style="display: block; width: 70%; margin: 20px auto;">
     	<p class="login-title"><img src="images/Logo.png" style="width: 100%;"></p>
     	<h1>&nbsp</h1>
-    	<form id="login" action="http://www.ntu-iic.org/app/login.php" method="post">
+    	<form id="login" action="http://www.ntu-iic.org/app/login.php" method="GET">
     		<label for="1">Name :</label>
 	    	<input type="text" id="name" name="name" style="border-width: 1px; border-style: solid;">
 	    	<label for="2">Email :</label>
@@ -73,7 +59,7 @@
     </div><!-- /header -->
     <div data-role="main" class="ui-content" id="content" style="display: block; width: 70%; margin: 20px auto;">
     	<p class="login-title">Register</p>
-    	<form id="login" action="http://www.ntu-iic.org/app/register.php" method="post">
+    	<form id="login" action="http://www.ntu-iic.org/app/register.php" method="GET">
     		<label for="1">Name* :</label>
 	    	<input type="text" id="1" name="name" style="border-width: 1px; border-style: solid;">
 	    	<label for="3">Email* :</label>
@@ -116,37 +102,20 @@ $(document).on({
 var loginInfo = {name: "", email: ""};
 var regInfo = {name: "", email: "", matricNo: "", phoneNo: "", dr: ""};
 
-/*
-$("#next").click(function () {
-	$.ajax({
-		
-	});
-});
-*/
-
 $(document).on('ready', function () {
 	localStorage.clear();
 	$("#1").on("input", (function () {
 		regInfo.name = $(this).val();
-/* 		alert($(this).val()); */
 	}));
-/*
-	$("#2").on("input", (function () {
-		regInfo.salutation = $(this).val();
-*/
-/* 		alert($(this).val()); 
-	}));*/
+
 	$("#3").on("input", (function () {
 		regInfo.email = $(this).val();
-/* 		alert($(this).val()); */
 	}));
 	$("#4").on("input", (function () {
 		regInfo.matricNo = $(this).val();
-/* 		alert($(this).val()); */
 	}));
 	$("#5").on("input", (function () {
 		regInfo.phoneNo = $(this).val();
-/* 		alert($(this).val()); */
 	}));
 	$("#6, #7, #8, #9").on("change", (function () {
 		regInfo.dr = "";
@@ -155,19 +124,7 @@ $(document).on('ready', function () {
 				regInfo.dr += $("#"+i).val() + " ";
 			}
 		}
-/* 		alert(regInfo.dr); */
 	
-/*
-		if($(this).is(':checked')) {
-			regInfo.dr.push($(this).val());
-		}
-		else {
-			var index = regInfo.dr.indexOf($(this).val());
-			if (index>-1) {
-				regInfo.dr.splice(index, 1);
-			}
-		}
-*/
 	}));
 	$("#name").on("input", (function () {
 		loginInfo.name = $(this).val();
@@ -177,56 +134,46 @@ $(document).on('ready', function () {
 	}));
 	$("#login").on("click", (function () {
 		if (loginInfo.name == "") {
-/*
 			navigator.notification.alert(
 			    "Name can't be empty.",  // message
 			    null,         // callback
 			    'Login',            // title
 			    "OK"                  // buttonName
 			);
-*/
 		}
 		else if (loginInfo.email == "") {
-/*
 			navigator.notification.alert(
 			    "Email can't be empty.",  // message
 			    null,         // callback
 			    'Login',            // title
 			    "OK"                  // buttonName
 			);		
-*/
 		}
 		else {
 			$.ajax({
 				url: "http://www.ntu-iic.org/app/login.php",
-				type: "POST",
+				type: "GET",
 				dataType: "json",
 				data: {loginInfo: JSON.stringify(loginInfo)},
 				success: function (response) {
-/* 					alert(response); */
 					if (response.status == "s") {
-/* 						alert("success"); */
-/*
 						navigator.notification.alert(
 						    "Welcome, "+loginInfo.name,  // message
 						    null,         // callback
 						    'Login',            // title
 						    "OK"                  // buttonName
 						);
-*/
 						localStorage.setItem("name", loginInfo.name);
 						localStorage.setItem("email", loginInfo.email);
 						window.location.replace("index.html");
 					}
 					else {
-/*
 						navigator.notification.alert(
 						    "Sorry, we can't find your profile from our database.",  // message
 						    null,         // callback
 						    'Login',            // title
 						    "OK"                  // buttonName
 						);
-*/
 					}
 				}
 			});
@@ -261,11 +208,10 @@ $(document).on('ready', function () {
 		else {
 			$.ajax({
 				url: "http://www.ntu-iic.org/app/userregister.php",
-				type: "POST",
+				type: "GET",
 				dataType: "json",
 				data: {regInfo: JSON.stringify(regInfo)},
 				success: function (response) {
-/* 					alert(response); */
 					if (response.status == "s") {
 						localStorage.setItem('name', regInfo.name);
 						localStorage.setItem('email', regInfo.email);
